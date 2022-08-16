@@ -8,13 +8,13 @@ document.getElementById('btn-submit').addEventListener('click', function () {
     //3.a = set id on the html elements
     // 3.b = get the value
     //3.c get the value from the element
-    const passwordField =document.getElementById('user-password');
+    const passwordField = document.getElementById('user-password');
     const password = passwordField.value;
     //step-4 verify email and password
-    if(email === 'rafi@gmail.com' && password ==='secret'){
-        console.log('Valid User')
+    if (email === 'rafi@gmail.com' && password === 'secret') {
+        window.location.href = "bank.html";
     }
-    else{
-        console.log('invalid User')
+    else {
+        alert('invalid email/password please try the currect email/password');
     }
 })
