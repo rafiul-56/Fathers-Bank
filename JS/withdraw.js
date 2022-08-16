@@ -21,21 +21,28 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const previousWithdrawTotalString = withdawTotalElement.innerText;
 
     const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
-    const currectWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
-    // step 4
-
-    withdawTotalElement.innerText = currectWithdrawTotal;
 //step-5
 
 const balanceTotalElement =document.getElementById('balance-total');
 const previousBalanceTotalString =balanceTotalElement.innerText;
 const previousBalanceTotal=parseFloat(previousBalanceTotalString);
+
+  // step-7
+  withdawField.value = '';
+
+if(newWithdrawAmount > previousBalanceTotal){
+    alert('Sorry you do not have enough money');
+    return;
+}
+
+// step 4
+const currectWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+withdawTotalElement.innerText = currectWithdrawTotal;
 //step-6
 
 const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
 balanceTotalElement.innerText = newBalanceTotal;
 
 
-    // step-7
-    withdawField.value = '';
+  
 })
